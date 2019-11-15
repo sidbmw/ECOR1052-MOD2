@@ -187,14 +187,14 @@ if __name__ == "__main__":
         # Try adjusting these one at a time to get a feel for how these work.
 
         # PID values for panning
-        panP = manager.Value("f", 0.0) 
-        panI = manager.Value("f", 0.0)
-        panD = manager.Value("f", 0.0) # Try to keep these an order of magnitude lower than your P and I values
+        panP = manager.Value("f", 0.095) #oscillations
+        panI = manager.Value("f", 0.085) #dampening 
+        panD = manager.Value("f", 0.002) # Try to keep these an order of magnitude lower than your P and I values/HISTORICAL ERROR
 
         # PID values for tilting
-        tiltP = manager.Value("f", 0.0) 
-        tiltI = manager.Value("f", 0.0)
-        tiltD = manager.Value("f", 0.0) # Try to keep these an order of magnitude lower than your P and I values
+        tiltP = manager.Value("f", 0.09) 
+        tiltI = manager.Value("f", 0.08)
+        tiltD = manager.Value("f", 0.002) # Try to keep these an order of magnitude lower than your P and I values
 
 
         # Beyond this point is multiprocessing stuff that is not important to know for making this work.
@@ -273,4 +273,5 @@ if __name__ == "__main__":
         
         except:
             print("Could not join Set Servos")
+
 
